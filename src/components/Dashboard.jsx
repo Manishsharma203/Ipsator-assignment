@@ -19,7 +19,9 @@ export default function Dashboard() {
                 label:e.target.dataset.listname || e.target.parentElement.parentElement.dataset.listname,
                 time:card.cardDetails.time}))
             // del from previous list
-            dispatch(deleteCard({card:card.cardDetails,listName:card.prevlistName}))
+            if(card.prevlistName!==e.target.dataset.listname && card.prevlistName!== e.target.parentElement.parentElement.dataset.listname){
+                dispatch(deleteCard({card:card.cardDetails,listName:card.prevlistName}))
+            }
         }
     }
 
