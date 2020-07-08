@@ -1,4 +1,4 @@
-import {ADD_A_LIST, ADD_CARD, EDIT_CARD, DELETE_CARD} from './actions'
+import {ADD_A_LIST, ADD_CARD, EDIT_CARD, DELETE_CARD, DELETE_LIST} from './actions'
 
 const initialState={
     allLists:[]
@@ -61,7 +61,6 @@ export const reducer=(state=initialState,action)=>{
             let cardToDelete=action.payload.card
             let listLabelName= action.payload.listName
             let oldLists4= state.allLists
-            let newLists=[]
             for(let i=0;i<oldLists4.length;i++){
                 if(oldLists4[i].label===listLabelName){
                     oldLists4[i].entries = oldLists4[i].entries.filter(e=>e.time!==cardToDelete.time)
@@ -70,6 +69,14 @@ export const reducer=(state=initialState,action)=>{
             return {
                 ...state,
                 allLists:[...oldLists4]
+            }
+        case DELETE_LIST:
+            let listToDelete=action.payload
+            let oldLists5 = state.allLists
+            oldLists5= oldLists5.filter(e=>e.label!==listToDelete)
+            return{
+                ...state,
+                allLists:[...oldLists5]
             }
         default:
             return state;

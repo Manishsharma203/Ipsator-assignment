@@ -29,7 +29,10 @@ export default function Card({ cardData, listName }) {
     return (
         <div>
             <div className='d-flex mb-2'>
-                <div className='text-left'>{cardData.name}</div>
+                <div>
+                    <div className='text-left text-truncate font-weight-bold text-monospace font-italic ml-1'>{cardData.name}</div>
+                    <div><small>Task created at : {new Date(cardData.time).toLocaleString()}</small></div>
+                </div>
                 <button className='btn ml-auto' onClick={editStart}><span className="iconify" data-icon="bx:bxs-edit" data-inline="false"></span></button>
                 <button className='btn' onClick={del} ><span className="iconify" data-icon="ant-design:delete-filled" data-inline="false"></span></button>
             </div>

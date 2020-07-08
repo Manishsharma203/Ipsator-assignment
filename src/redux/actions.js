@@ -3,6 +3,7 @@ export const ADD_A_LIST='ADD_A_LIST'
 export const ADD_CARD='ADD_CARD'
 export const EDIT_CARD='EDIT_CARD'
 export const DELETE_CARD='DELETE_CARD'
+export const DELETE_LIST='DELETE_LIST'
 
 // actions
 
@@ -23,5 +24,10 @@ export const editCard=payload=>({
 
 export const deleteCard=payload=>({
     type:DELETE_CARD,
+    payload
+})
+
+export const deleteList=payload=>({
+    type:DELETE_LIST,
     payload
 })
