@@ -1,4 +1,4 @@
-##  Ipsator Analytics Assignment - Trello Clone App
+##  Trello Clone App
 
 ![Home Page](https://github.com/Manishsharma203/Ipsator-assignment/blob/master/public/HomePageIA.png)
 
